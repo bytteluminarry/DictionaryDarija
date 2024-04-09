@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="assets/style/main.css">
+
+</head>
+
+<body>
+   
+    <div id="main-screen" class="mobile">
+        <div class="topbar">
+            <div class="header">
+                <img onclick="Android.ClosePage()" src="assets/icons/backwhite.png" alt="Back">
+                <h1>Darija Dictionary</h1>
+                <img style="visibility: hidden;" src="assets/icons/info.png" alt="About">
+            </div>
+        </div>
+
+        <div class="maincontent">
+            <div class="page active">
+                <div class="fieldset">
+                    <p>Email</p>
+                    <input id="txtemail" type="text">
+                </div>
+
+                <div class="fieldset">
+                    <p>Message</p>
+                    <textarea id="txtmessage"></textarea>
+                </div>
+
+                <div class="fieldset">
+                    <button onclick="Android.SendEmailMessage(document.getElementById('txtemail').value,document.getElementById('txtmessage').value)">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+
+<body>
+    <div id="left-nav" class="leftmenu">
+        <img id="close" onclick="closeLeftNav()" src="assets/icons/back.png" alt="Close">
+
+        <div class="logo">
+            <img src="assets/icons/logo.png" alt="Logo">
+        </div>
+
+        <ul>
+            <li>
+                <div onclick="closeLeftNav()">
+                    <img src="assets/icons/home.png" alt="Home">
+                    <p>Home</p>
+                </div>
+            </li>
+
+            <li onclick="Android.SendMail();">
+                <div>
+                    <img src="assets/icons/message.png" alt="Send Message">
+                    <p>Contact Us</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="assets/icons/rate.png" alt="Rate Us">
+                    <p>Rate our App</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="splashscreen" id="main-splashscreen">
+        <div class="logo">
+            <img src="assets/icons/logo.png" alt="Logo">
+        </div>
+    </div>
+
+    <div id="main-screen" class="mobile">
+        <div class="topbar">
+            <div class="header">
+                <img onclick="openLeftNav()" src="assets/icons/menu.png" alt="Menu">
+                <h1>Darija Dictionary</h1>
+                <img src="assets/icons/info.png" style="visibility:hidden" alt="About">
+            </div>
+            <div class="searchbar">
+                <input oninput="SearchDB(document.getElementById('searchQuery').value)" id="searchQuery" type="text"
+                    placeholder="Search for a word...">
+
+
+                <img onclick="SearchDB(document.getElementById('searchQuery').value)" src="assets/icons/search.png"
+                    alt="Search">
+            </div>
+        </div>
+
+        <div class="maincontent" id="maincontent1">
+            <div class="page active">
+                <ul id="words-list">
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-filled.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-filled.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page" style="display:none">
+                <ul id="sentences-list">
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">Hi there, I would like to have a cup of tea if you dont mind</p>
+                                <p class="info">(sentence)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Salam, ila jat aala khatrk, bghit wahd kas atay</p>
+                                    <p class="info">(سلام، إلى جات على خاطرك، بغيت واحد كاس أتاي)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">Hi there, I would like to have a cup of tea if you dont mind</p>
+                                <p class="info">(sentence)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Salam, ila jat aala khatrk, bghit wahd kas atay</p>
+                                    <p class="info">(سلام، إلى جات على خاطرك، بغيت واحد كاس أتاي)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">Hi there, I would like to have a cup of tea if you dont mind</p>
+                                <p class="info">(sentence)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Salam, ila jat aala khatrk, bghit wahd kas atay</p>
+                                    <p class="info">(سلام، إلى جات على خاطرك، بغيت واحد كاس أتاي)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-outlined.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page">
+                <ul id="favoritesList">
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-filled.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-filled.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cardview">
+                            <div class="informative">
+                                <p class="word">School</p>
+                                <p class="info">(noun)</p>
+                            </div>
+                            <div class="details">
+                                <div class="informative">
+                                    <p class="word">Mdrassa</p>
+                                    <p class="info">(مدرسة)</p>
+                                </div>
+                                <div class="actions">
+                                    <img src="assets/icons/speaker.png" alt="Listen">
+                                    <img src="assets/icons/favourite-filled.png" alt="Favourite">
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main-menu" class="menubar">
+            <div class="item active">
+                <img src="assets/icons/dictionary.png" alt="Dictionary">
+                <p>Dictionary</p>
+            </div>
+
+            <div class="item" style="display: none">
+                <img src="assets/icons/sentences.png" alt="Sentences">
+                <p>Sentences</p>
+            </div>
+
+            <div class="item">
+                <img src="assets/icons/favourites.png" alt="Favourites">
+                <p>Favourites</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="details-popup" class="popup">
+        <div style="background-color: transparent;" class="topbar">
+            <div class="header">
+                <img onclick="openHomeScreen()" src="assets/icons/close.png" alt="Menu">
+                <h2>More Details</h2>
+                <img src="assets/icons/info.png" alt="About" style="opacity: 0">
+            </div>
+        </div>
+
+        <div class="layer">
+            <div class="informative" style="display:none">
+                <div class="title">
+                    <h3 id="popupTitle">Sentence of the day</h3>
+                </div>
+                <div class="tag">
+                    <p id="popupType">Sentence</p>
+                </div>
+            </div>
+
+            <p id="popupText" class="details-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                tincidunt,
+                nunc eu
+                pharetra eleifend, tortor justo consequat sem, at ullamcorper ligula mauris id purus. Vestibulum ante
+                ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+
+        <div style="background-color: #f5f5f5; grid-template-columns: repeat(2, 1fr);" class="menubar">
+            <div class="element" onclick="PlaySound()">
+                <img src="assets/icons/speaker.png" alt="Listen">
+                <p>Listen</p>
+            </div>
+
+            <div class="element" onclick="Android.SendMail();">
+                <img src="assets/icons/ask.png" alt="Ask Us">
+                <p>Ask Us</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        let globalAudio = "";
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        const wordsList = document.getElementById('words-list');
+        wordsList.innerHTML = "";
+        const sentencesList = document.getElementById('sentences-list');
+        sentencesList.innerHTML = "";
+
+        function ResetContainers() {
+            wordsList.innerHTML = "";
+            sentencesList.innerHTML = "";
+        }
+
+        const popupTitle = document.getElementById('popupTitle');
+        const popupType = document.getElementById('popupType');
+        const popupText = document.getElementById('popupText');
+
+        let favoritesList = document.getElementById('favoritesList');
+
+        renderFavorites();
+
+        function renderFavorites() {
+            favoritesList.innerHTML = '';
+
+            favorites.forEach((favorite) => {
+                // Create elements for the favorite word
+                let listItem = document.createElement("li");
+                let cardview = document.createElement("div");
+                cardview.className = "cardview";
+
+                let informative1 = document.createElement("div");
+                informative1.className = "informative";
+                let wordElem1 = document.createElement("p");
+                wordElem1.className = "word";
+                wordElem1.innerText = favorite.word;
+                let infoElem1 = document.createElement("p");
+                infoElem1.className = "info";
+                infoElem1.innerText = "(" + favorite.type + ")";
+                informative1.appendChild(wordElem1);
+                informative1.appendChild(infoElem1);
+
+                let details = document.createElement("div");
+                details.className = "details";
+
+                let informative2 = document.createElement("div");
+                informative2.className = "informative";
+                let wordElem2 = document.createElement("p");
+                wordElem2.className = "word";
+                wordElem2.innerText = favorite.translation_en;
+                let infoElem2 = document.createElement("p");
+                infoElem2.className = "info";
+                infoElem2.innerText = "(" + favorite.translation_ar + ")";
+                informative2.appendChild(wordElem2);
+                informative2.appendChild(infoElem2);
+
+                let actions = document.createElement("div");
+                actions.className = "actions";
+                let imgListen = document.createElement("img");
+                imgListen.src = "assets/icons/speaker.png";
+                imgListen.alt = "Listen";
+                let imgFavourite = document.createElement("img");
+                imgFavourite.src = "assets/icons/favourite-filled.png"; // Assuming all favorites are filled initially
+                imgFavourite.alt = "Favourite";
+                actions.appendChild(imgListen);
+                actions.appendChild(imgFavourite);
+
+                details.appendChild(informative2);
+                details.appendChild(actions);
+
+                cardview.appendChild(informative1);
+                cardview.appendChild(details);
+
+                listItem.appendChild(cardview);
+
+                // Append the favorite word to the container
+                favoritesList.appendChild(listItem);
+
+                if (favorite.type.toLowerCase().trim() === "verb") {
+                    // Create a new paragraph element for the message
+                    const messageParagraph = document.createElement('p');
+                    messageParagraph.textContent = 'Click to view conjugation';
+                    messageParagraph.style.color = '#777';
+                    messageParagraph.style.fontSize = '0.84rem';
+
+                    // Create a new div element for the message container
+                    const messageContainer = document.createElement('div');
+                    messageContainer.appendChild(messageParagraph);
+
+                    // Append the message container to the cardview element
+                    cardview.appendChild(messageContainer);
+                }
+
+                // Add onclick event for cardview if conjugation exists
+                if (favorite.conjugation.trim().length > 0) {
+                    cardview.onclick = () => {
+                        if (favorite.type.toLowerCase().trim() === "verb") {
+                            popupTitle.innerHTML = "Word of the day";
+                            popupType.innerHTML = favorite.type;
+                            popupText.innerHTML = favorite.conjugation;
+                            popup.style.bottom = "0";
+                            globalAudio = favorite.audio;
+                        }
+                    };
+                }
+
+                // Add onclick event for imgListen (assuming functionality is the same)
+                imgListen.onclick = (event) => {
+                    event.stopPropagation();
+                    Android.Play(favorite.audio);
+                };
+
+                // Add onclick event for imgFavourite (assuming functionality is the same)
+                imgFavourite.onclick = (event) => {
+                    event.stopPropagation();
+                    const existingIndex = favorites.findIndex(item => item.word === favorite.word);
+
+                    if (existingIndex !== -1) {
+                        favorites.splice(existingIndex, 1);
+                        imgFavourite.src = "assets/icons/favourite-outlined.png";
+                    }
+
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+                    favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+                    renderFavorites();
+                };
+            });
+        }
+
+
+        function processWord(word, translation_en, translation_ar, type, conjugation, audio, IR) {
+            if (type.toLowerCase().trim() === "u") {
+                type = "verb";
+            }
+            const newWord = {
+                word: word,
+                translation_en: translation_en,
+                translation_ar: translation_ar,
+                type: type,
+                conjugation: conjugation,
+                audio: audio
+            };
+            var listItem = document.createElement("li");
+            var cardview = document.createElement("div");
+            cardview.className = "cardview";
+
+            var informative1 = document.createElement("div");
+            informative1.className = "informative";
+            var wordElem1 = document.createElement("p");
+            wordElem1.className = "word";
+            wordElem1.innerText = word;
+            var infoElem1 = document.createElement("p");
+            infoElem1.className = "info";
+            infoElem1.innerText = "(" + type + ")";
+            informative1.appendChild(wordElem1);
+            informative1.appendChild(infoElem1);
+
+            var details = document.createElement("div");
+            details.className = "details";
+
+            var informative2 = document.createElement("div");
+            informative2.className = "informative";
+            var wordElem2 = document.createElement("p");
+            wordElem2.className = "word";
+            wordElem2.innerText = translation_en;
+            var infoElem2 = document.createElement("p");
+            infoElem2.className = "info";
+            infoElem2.innerHTML = "(" + translation_ar + ")";
+            informative2.appendChild(wordElem2);
+            informative2.appendChild(infoElem2);
+
+            var actions = document.createElement("div");
+            actions.className = "actions";
+            var imgListen = document.createElement("img");
+            imgListen.src = "assets/icons/speaker.png";
+            imgListen.alt = "Listen";
+            var imgFavourite = document.createElement("img");
+
+            const existingIndex = favorites.findIndex(item => item.word === word);
+
+            if (existingIndex !== -1) {
+                imgFavourite.src = "assets/icons/favourite-filled.png";
+            }
+            else {
+                imgFavourite.src = "assets/icons/favourite-outlined.png";
+            }
+
+            imgFavourite.alt = "Favourite";
+            actions.appendChild(imgListen);
+            actions.appendChild(imgFavourite);
+
+            details.appendChild(informative2);
+            details.appendChild(actions);
+
+            actions.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            cardview.appendChild(informative1);
+            cardview.appendChild(details);
+
+            if (type.toLowerCase().trim() === "verb") {
+                // Create a new paragraph element for the message
+                const messageParagraph = document.createElement('p');
+                messageParagraph.textContent = 'Click to view conjugation';
+                messageParagraph.style.color = '#777';
+                messageParagraph.style.fontSize = '0.84rem';
+
+                // Create a new div element for the message container
+                const messageContainer = document.createElement('div');
+                messageContainer.appendChild(messageParagraph);
+
+                // Append the message container to the cardview element
+                cardview.appendChild(messageContainer);
+            }
+
+
+            listItem.appendChild(cardview);
+
+            const liElements = wordsList.querySelectorAll('li');
+
+            liElements.forEach(li => {
+                const firstParagraph = li.querySelector('p');
+
+                if (firstParagraph && firstParagraph.innerText.trim() === word) {
+                    return;
+                }
+            });
+
+            wordsList.appendChild(listItem);
+            if (conjugation.trim().length > 0) {
+                cardview.onclick = () => {
+                    if (type.toLowerCase().trim() === "verb") {
+                        popupTitle.innerHTML = "Word of the day";
+                        popupType.innerHTML = type;
+                        popupText.innerHTML = conjugation;
+                        globalAudio = translation_ar;
+                        popup.style.bottom = "0";
+                    }
+                };
+            }
+
+            imgListen.onclick = (event) => {
+                event.stopPropagation();
+                Android.Play(audio);
+            };
+
+            imgFavourite.onclick = (event) => {
+                event.stopPropagation();
+                const existingIndex = favorites.findIndex(item => item.word === word);
+                if (existingIndex !== -1) {
+                    favorites.splice(existingIndex, 1);
+                    imgFavourite.src = "assets/icons/favourite-outlined.png";
+                } else {
+                    favorites.push(newWord);
+                    imgFavourite.src = "assets/icons/favourite-filled.png";
+                }
+
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+
+                favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+                renderFavorites();
+            };
+
+            var maincontent1 = document.getElementById('maincontent1');
+            maincontent1.scrollTop = 0;
+        }
+
+        function processSentence(word, translation_en, translation_ar, type, conjugation, audio) {
+            const newWord = {
+                word: word,
+                translation_en: translation_en,
+                translation_ar: translation_ar,
+                type: type,
+                conjugation: conjugation,
+                audio: audio
+            };
+            var listItem = document.createElement("li");
+            var cardview = document.createElement("div");
+            cardview.className = "cardview";
+
+            var informative1 = document.createElement("div");
+            informative1.className = "informative";
+            var wordElem1 = document.createElement("p");
+            wordElem1.className = "word";
+            wordElem1.innerText = word;
+            var infoElem1 = document.createElement("p");
+            infoElem1.className = "info";
+            infoElem1.innerText = "(" + type + ")";
+            informative1.appendChild(wordElem1);
+            informative1.appendChild(infoElem1);
+
+            var details = document.createElement("div");
+            details.className = "details";
+
+            var informative2 = document.createElement("div");
+            informative2.className = "informative";
+            var wordElem2 = document.createElement("p");
+            wordElem2.className = "word";
+            wordElem2.innerText = translation_en;
+            var infoElem2 = document.createElement("p");
+            infoElem2.className = "info";
+            infoElem2.innerText = "(" + translation_ar + ")";
+            informative2.appendChild(wordElem2);
+            informative2.appendChild(infoElem2);
+
+            var actions = document.createElement("div");
+            actions.className = "actions";
+            var imgListen = document.createElement("img");
+            imgListen.src = "assets/icons/speaker.png";
+            imgListen.alt = "Listen";
+            var imgFavourite = document.createElement("img");
+            imgFavourite.src = "assets/icons/favourite-outlined.png";
+            imgFavourite.alt = "Favourite";
+            actions.appendChild(imgListen);
+            actions.appendChild(imgFavourite);
+
+            details.appendChild(informative2);
+            details.appendChild(actions);
+
+            cardview.appendChild(informative1);
+            cardview.appendChild(details);
+
+            listItem.appendChild(cardview);
+
+            sentencesList.appendChild(listItem);
+
+            if (conjugation.trim().length > 0) {
+                listItem.onclick = () => {
+                    popupTitle.innerHTML = "Sentence of the day";
+                    popupType.innerHTML = type;
+                    popupText.innerHTML = conjugation;
+                    globalAudio = translation_ar;
+                    popup.style.bottom = "0";
+                };
+            }
+
+            imgListen.onclick = (event) => {
+                event.stopPropagation();
+                Android.Play(audio);
+            };
+
+            imgFavourite.onclick = (event) => {
+                event.stopPropagation();
+                const existingIndex = favorites.findIndex(item => item.word === word);
+                if (existingIndex !== -1) {
+                    favorites.splice(existingIndex, 1);
+                    imgFavourite.src = "assets/icons/favourite-outlined.png";
+                } else {
+                    favorites.push(newWord);
+                    imgFavourite.src = "assets/icons/favourite-filled.png";
+                }
+
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+
+                favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+                renderFavorites();
+            };
+
+        }
+
+        function PlaySound() {
+
+            Android.Play(globalAudio);
+        }
+
+        function wordNotFound(text) {
+            wordsList.innerHTML = "<div style='width: 100%; padding: 20px; box-sizing: border-box; text-align: center;'>Didn't find '" + text + "'? Contact us and we'll make sure to add it <button style='padding: 10px; margin: 10px; background: #ddd' onclick='contactUs()'>Contact Us</button></div>";
+
+            var maincontent1 = document.getElementById('maincontent1');
+            maincontent1.scrollTop = 0;
+        }
+
+        function similarWord(text, ar, en) {
+            var content = "<div style='width: 100%; padding: 20px; padding-bottom:0; box-sizing: border-box; text-align: center;'>Did you mean ";
+
+            if (text.trim().length > 0) {
+                content += "<strong style='text-decoration:underline' onclick=\"document.getElementById('searchQuery').value = '" + text + "'; Android.Search('" + text + "')\">" + text + "</strong>";
+            }
+            if (ar.trim().length > 0) {
+                //if (text) {
+                //    content += ", ";
+                //}
+                //content += "<strong  style='text-decoration:underline' onclick=\"document.getElementById('searchQuery').value = '" + ar + "'; Android.Search('" + ar + "')\">" + ar + "</strong>";
+            }
+            if (en.trim().length > 0) {
+                if (text || ar) {
+                    content += ", ";
+                }
+                content += "<strong  style='text-decoration:underline' onclick=\"document.getElementById('searchQuery').value = '" + en + "'; Android.Search('" + en + "')\">" + en + "</strong>";
+            }
+
+            content += "</div>";
+
+            wordsList.innerHTML = content;
+
+            wordsList.innerHTML += "<div style='width: 100%; padding: 20px; padding-top:0; box-sizing: border-box; text-align: center;'>Did not find '<strong>" + document.getElementById('searchQuery').value + "</strong>'? Contact us and we'll make sure to add it <button style='padding: 10px; margin: 10px; background: #0b93f7; border-radius: 20px; color: white;' onclick='contactUs()'>Contact Us</button></div>";
+
+            var maincontent1 = document.getElementById('maincontent1');
+            maincontent1.scrollTop = 0;
+        }
+
+        function contactUs() {
+            Android.SendMail();
+        }
+
+        function sentenceNotFound(text) {
+            sentencesList.innerHTML = "<div style='width: 100%; padding: 20px; box-sizing: border-box; text-align: center;'>Didn't find '" + text + "'? Contact us and we'll make sure to add it</div>";
+        }
+
+
+
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+    <script>
+        class MyData {
+            constructor(Word, A, E, IR, T) {
+                this.Word = Word;
+                this.A = A;
+                this.E = E;
+                this.IR = IR;
+                this.T = T;
+
+                this.pr_ana = "";
+                this.pr_nta = "";
+                this.pr_nti = "";
+                this.pr_howa = "";
+                this.pr_hiya = "";
+                this.pr_7na = "";
+                this.pr_ntoma = "";
+                this.pr_homa = "";
+
+                this.ps_ana = "";
+                this.ps_nta = "";
+                this.ps_nti = "";
+                this.ps_howa = "";
+                this.ps_hiya = "";
+                this.ps_7na = "";
+                this.ps_ntoma = "";
+                this.ps_homa = "";
+
+                this.ft_ana = "";
+                this.ft_nta = "";
+                this.ft_nti = "";
+                this.ft_howa = "";
+                this.ft_hiya = "";
+                this.ft_7na = "";
+                this.ft_ntoma = "";
+                this.ft_homa = "";
+            }
+
+            // getters and setters
+            getWord() {
+                return this.Word;
+            }
+
+            setWord(W) {
+                this.Word = W;
+            }
+
+            getA() {
+                return this.A;
+            }
+
+            setA(A) {
+                this.A = A;
+            }
+
+            getE() {
+                return this.E;
+            }
+
+            setE(E) {
+                this.E = E;
+            }
+
+            getIR() {
+                return this.IR;
+            }
+
+            setIR(IR) {
+                this.IR = IR;
+            }
+
+            getT() {
+                return this.T;
+            }
+
+            setT(T) {
+                this.T = T;
+            }
+        }
+
+        // Function to calculate Levenshtein distance between two strings
+        function levenshteinDistance(s1, s2) {
+            const len1 = s1.length;
+            const len2 = s2.length;
+
+            const dp = [];
+
+            for (let i = 0; i <= len1; i++) {
+                dp[i] = [i];
+            }
+
+            for (let j = 0; j <= len2; j++) {
+                dp[0][j] = j;
+            }
+
+            for (let i = 1; i <= len1; i++) {
+                for (let j = 1; j <= len2; j++) {
+                    const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + cost
+                    );
+                }
+            }
+
+            return dp[len1][len2];
+        }
+
+        function isFirstCharFollowedByVowel(word) {
+            const vowels = "aeiouAEIOU";
+            const lowerCaseWord = word.toLowerCase();
+            return lowerCaseWord.length >= 2 && vowels.includes(lowerCaseWord.charAt(1));
+        }
+
+        function removeDuplicates(str) {
+            let result = '';
+            for (let i = 0; i < str.length; i++) {
+                const currentChar = str.charAt(i);
+                if (i === 0 || currentChar !== str.charAt(i - 1)) {
+                    result += currentChar;
+                }
+            }
+            return result;
+        }
+
+        function contains(array, key) {
+            return array.includes(key);
+        }
+
+        function latinToArabic(letter) {
+            const latinToArabicMapping = {
+                'a': 'ا', 'b': 'ب', 'c': 'س', 'd': 'د', 'e': 'ي', 'f': 'ف', 'g': 'ك', 'h': 'ه', 'i': 'ي', 'j': 'ج',
+                'k': 'ك', 'l': 'ل', 'm': 'م', 'n': 'ن', 'o': 'و', 'p': 'ب', 'q': 'ق', 'r': 'ر', 's': 'س', 't': 'ت',
+                'u': 'و', 'v': 'ف', 'w': 'و', 'y': 'ي', 'z': 'ز', '9': 'ق', '8': 'غ', '7': 'ح', '5': 'خ', '3': 'ع',
+                '1': 'ش'
+            };
+            return latinToArabicMapping[letter.toLowerCase()] || letter;
+        }
+
+        function escapeSingleQuotes(str) {
+            return str.replace(/'/g, "\\'");
+        }
+    </script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBusaZpQjeGnbBTJWmM871pxfpSayhrkSU",
+            authDomain: "dictionary-b9200.firebaseapp.com",
+            databaseURL: "https://dictionary-b9200-default-rtdb.firebaseio.com",
+            projectId: "dictionary-b9200",
+            storageBucket: "dictionary-b9200.appspot.com",
+            messagingSenderId: "926723016408",
+            appId: "1:926723016408:web:90f46f582f26d2891ff9ad",
+            measurementId: "G-5E07LL9E0L"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const database = firebase.database();
+
+        const wordsRef = database.ref("DB");
+
+        var dataList = [];
+
+        function AddData() {
+            wordsRef.once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var word = childSnapshot.key;
+                    var translation_en = childSnapshot.child('L').val();
+                    var translation_ar = childSnapshot.child('A').val();
+
+                    // Check if snapshot has "IR"
+                    var hasIR = childSnapshot.hasChild('IR');
+
+                    // Check if snapshot has "T"
+                    var hasT = childSnapshot.hasChild('T');
+
+                    var tp = 'noun';
+                    if (hasT) {
+                        if (childSnapshot.child('T').val() === 'U')
+                            tp = 'U';
+                        else
+                            tp = 'verb';
+                    }
+
+                    // Create a MyData object
+                    var myData = new MyData(word, translation_ar, translation_en, hasIR ? childSnapshot.child('IR').val() : '', tp);
+
+                    if (childSnapshot.hasChild('C')) {
+                        myData.pr_ana = childSnapshot.child('C').child('Pr').child('ana').val();
+                        myData.pr_nta = childSnapshot.child('C').child('Pr').child('nta').val();
+                        myData.pr_nti = childSnapshot.child('C').child('Pr').child('nti').val();
+                        myData.pr_howa = childSnapshot.child('C').child('Pr').child('howa').val();
+                        myData.pr_hiya = childSnapshot.child('C').child('Pr').child('hiya').val();
+                        myData.pr_7na = childSnapshot.child('C').child('Pr').child('7na').val();
+                        myData.pr_ntoma = childSnapshot.child('C').child('Pr').child('ntoma').val();
+                        myData.pr_homa = childSnapshot.child('C').child('Pr').child('homa').val();
+
+                        myData.ps_ana = childSnapshot.child('C').child('Ps').child('ana').val();
+                        myData.ps_nta = childSnapshot.child('C').child('Ps').child('nta').val();
+                        myData.ps_nti = childSnapshot.child('C').child('Ps').child('nti').val();
+                        myData.ps_howa = childSnapshot.child('C').child('Ps').child('howa').val();
+                        myData.ps_hiya = childSnapshot.child('C').child('Ps').child('hiya').val();
+                        myData.ps_7na = childSnapshot.child('C').child('Ps').child('7na').val();
+                        myData.ps_ntoma = childSnapshot.child('C').child('Ps').child('ntoma').val();
+                        myData.ps_homa = childSnapshot.child('C').child('Ps').child('homa').val();
+
+                        myData.ft_ana = childSnapshot.child('C').child('Ft').child('ana').val();
+                        myData.ft_nta = childSnapshot.child('C').child('Ft').child('nta').val();
+                        myData.ft_nti = childSnapshot.child('C').child('Ft').child('nti').val();
+                        myData.ft_howa = childSnapshot.child('C').child('Ft').child('howa').val();
+                        myData.ft_hiya = childSnapshot.child('C').child('Ft').child('hiya').val();
+                        myData.ft_7na = childSnapshot.child('C').child('Ft').child('7na').val();
+                        myData.ft_ntoma = childSnapshot.child('C').child('Ft').child('ntoma').val();
+                        myData.ft_homa = childSnapshot.child('C').child('Ft').child('homa').val();
+                    }
+
+                    dataList.push(myData);
+                });
+            }).catch(function (error) {
+                console.error('Error retrieving data:', error);
+            });
+        }
+
+        AddData();
+
+        let wordIndex = 0;
+        let index = 0;
+
+        function SearchDB(prefix) {
+            wordsList.innerHTML = "";
+            if (prefix.trim() === '') {
+                return; 
+            }
+
+            wordIndex = 0;
+            index = 0;
+            var jsFunction = '';
+
+            dataList.forEach(function (Data) {
+                var word = Data.getWord();
+                var translation_ar = Data.getA();
+                var translation_en = Data.getE();
+                var type = Data.getT();
+                var IR = Data.getIR();
+
+                if (word.toLowerCase().startsWith("a ")) {
+                    word = word.replace(/^a\s/i, "");
+                }
+
+                if (word.toLowerCase().startsWith(prefix.toLowerCase()) ||
+                    translation_ar.toLowerCase().startsWith(prefix.toLowerCase()) ||
+                    translation_en.toLowerCase().startsWith(prefix.toLowerCase())) {
+                    if (wordIndex <= 40) {
+                        wordIndex++;
+                        var conjugation_str = "";
+
+                        var audio = translation_ar;
+
+                        var audio_word = translation_en.toLowerCase();
+                        audio_word = removeDuplicates(audio_word);
+
+                        audio_word = audio_word.replace(/x/g, "ks");
+
+                        audio_word = audio_word.replace(/gh/g, "8");
+                        audio_word = audio_word.replace(/kh/g, "5");
+                        audio_word = audio_word.replace(/ch/g, "1");
+                        audio_word = audio_word.replace(/sh/g, "1");
+
+                        var arabicWord = "";
+                        for (var i = 0; i < audio_word.length; i++) {
+                            arabicWord += latinToArabic(audio_word.charAt(i));
+                        }
+
+                        var vowels = ['a', 'e', 'i', 'o', 'u'];
+                        if (!vowels.includes(audio_word.charAt(audio_word.length - 1).toLowerCase())) {
+                            arabicWord += "ْ";
+                        }
+
+                        if (isFirstCharFollowedByVowel(audio_word)) {
+                            arabicWord = arabicWord.charAt(0) + "ْ" + arabicWord.substring(1);
+                        }
+
+                        arabicWord = arabicWord.charAt(0) + "ْ" + arabicWord.substring(1);
+
+                        arabicWord = arabicWord.replace(/ي/g, "يِ");
+
+                        var pr = "", sf = "";
+
+                        var conjugation = "";
+
+                        var E = translation_en;
+
+                        if (type.toLowerCase() === "verb") {
+                            if (IR !== "") {
+                                if (IR.toLowerCase() !== "static") {
+                                    var lastIndex = translation_en.lastIndexOf('a');
+                                    if (lastIndex !== -1) {
+                                        // Replace 'a' at the last index with 'o'
+                                        translation_en = translation_en.substring(0, lastIndex) + IR + translation_en.substring(lastIndex + 1);
+                                    }
+
+                                    // Present
+                                    conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                                    // Present
+                                    // I
+                                    pr = "<strong>kan</strong>"; sf = "";
+                                    conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                    // you_m
+                                    pr = "<strong>kat</strong>"; sf = "";
+                                    conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                    // you_f
+                                    pr = "<strong>kat</strong>"; sf = "<strong>i</strong>";
+                                    conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                    // he
+                                    pr = "<strong>kay</strong>"; sf = "";
+                                    conjugation += "He: howa " + pr + translation_en + sf + "<br>";
+                                    // she
+                                    pr = "<strong>kat</strong>"; sf = "";
+                                    conjugation += "She: hia " + pr + translation_en + sf + "<br>";
+                                    // we
+                                    pr = "<strong>kan</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "We: hna " + pr + translation_en + sf + "<br>";
+                                    // you_pl
+                                    pr = "<strong>kat</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                    // they
+                                    pr = "<strong>kay</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "They: houma " + pr + translation_en + sf + "<br><br>";
+
+                                    // Past
+                                    conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                                    // Past
+                                    // I
+                                    pr = ""; sf = "<strong>t</strong>";
+                                    conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                    // you_m
+                                    pr = ""; sf = "<strong>ti</strong>";
+                                    conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                    // you_f
+                                    pr = ""; sf = "<strong>ti</strong>";
+                                    conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                    // he
+                                    pr = ""; sf = "";
+                                    conjugation += "He: howa " + pr + E + sf + "<br>";
+                                    // she
+                                    pr = ""; sf = "<strong>at</strong>";
+                                    conjugation += "She: hia " + pr + E + sf + "<br>";
+                                    // we
+                                    pr = ""; sf = "<strong>na</strong>";
+                                    conjugation += "We: hna " + pr + translation_en + sf + "<br>";
+                                    // you_pl
+                                    pr = ""; sf = "<strong>to</strong>";
+                                    conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                    // they
+                                    pr = ""; sf = "<strong>o</strong>";
+                                    conjugation += "They: houma " + pr + E + sf + "<br><br>";
+
+                                    // Future
+                                    conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                                    // Future
+                                    // I
+                                    pr = "<strong>ghadi n</strong>"; sf = "";
+                                    conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                    // you_m
+                                    pr = "<strong>ghadi t</strong>"; sf = "";
+                                    conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                    // you_f
+                                    pr = "<strong>ghadi t</strong>"; sf = "<strong>i</strong>";
+                                    conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                    // he
+                                    pr = "<strong>ghadi y</strong>"; sf = "";
+                                    conjugation += "He: howa " + pr + translation_en + sf + "<br>";
+                                    // she
+                                    pr = "<strong>ghadi t</strong>"; sf = "";
+                                    conjugation += "She: hia " + pr + translation_en + sf + "<br>";
+                                    // we
+                                    pr = "<strong>ghadi n</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "We: hhna " + pr + translation_en + sf + "<br>";
+                                    // you_pl
+                                    pr = "<strong>ghadi t</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                    // they
+                                    pr = "<strong>ghadi y</strong>"; sf = "<strong>o</strong>";
+                                    conjugation += "They: houma " + pr + translation_en + sf + "<br>";
+                                }
+                            } else {
+                                if (translation_ar.endsWith("ى")) {
+                                    if (translation_en.endsWith("a")) {
+                                        translation_en = translation_en.substring(0, translation_en.length - 1) + "i";
+                                    }
+                                }
+
+                                var tmp = translation_en;
+
+                                // Present
+                                conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                                // Present
+                                // I
+                                pr = "<strong>kan</strong>"; sf = "";
+                                conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                // you_m
+                                pr = "<strong>kat</strong>"; sf = "";
+                                conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                // you_f
+                                pr = "<strong>kat</strong>"; sf = "<strong>i</strong>";
+                                conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                // he
+                                pr = "<strong>kay</strong>"; sf = "";
+                                conjugation += "He: howa " + pr + translation_en + sf + "<br>";
+                                // she
+                                pr = "<strong>kat</strong>"; sf = "";
+                                conjugation += "She: hia " + pr + translation_en + sf + "<br>";
+                                // we
+                                pr = "<strong>kan</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "We: hna " + pr + translation_en + sf + "<br>";
+                                // you_pl
+                                pr = "<strong>kat</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                // they
+                                pr = "<strong>kay</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "They: houma " + pr + translation_en + sf + "<br><br>";
+
+                                if (translation_ar.endsWith("ا")) {
+                                    if (translation_en.endsWith("a")) {
+                                        translation_en = translation_en.substring(0, translation_en.length - 1) + "i";
+                                    }
+                                }
+
+                                // Past
+                                conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                                // Past
+                                // I
+                                pr = ""; sf = "<strong>t</strong>";
+                                conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                // you_m
+                                pr = ""; sf = "<strong>ti</strong>";
+                                conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                // you_f
+                                pr = ""; sf = "<strong>ti</strong>";
+                                conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                // he
+                                pr = ""; sf = "";
+                                conjugation += "He: howa " + pr + E + sf + "<br>";
+                                // she
+                                pr = ""; sf = "<strong>at</strong>";
+                                conjugation += "She: hia " + pr + E + sf + "<br>";
+                                // we
+                                pr = ""; sf = "<strong>na</strong>";
+                                conjugation += "We: hna " + pr + translation_en + sf + "<br>";
+                                // you_pl
+                                pr = ""; sf = "<strong>to</strong>";
+                                conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                // they
+                                pr = ""; sf = "<strong>o</strong>";
+                                conjugation += "They: houma " + pr + E + sf + "<br><br>";
+
+                                translation_en = tmp;
+
+                                // Future
+                                conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                                // Future
+                                // I
+                                pr = "<strong>ghadi n</strong>"; sf = "";
+                                conjugation += "I: ana " + pr + translation_en + sf + "<br>";
+                                // you_m
+                                pr = "<strong>ghadi t</strong>"; sf = "";
+                                conjugation += "You(m): nta " + pr + translation_en + sf + "<br>";
+                                // you_f
+                                pr = "<strong>ghadi t</strong>"; sf = "<strong>i</strong>";
+                                conjugation += "You(f): nti " + pr + translation_en + sf + "<br>";
+                                // he
+                                pr = "<strong>ghadi y</strong>"; sf = "";
+                                conjugation += "He: howa " + pr + translation_en + sf + "<br>";
+                                // she
+                                pr = "<strong>ghadi t</strong>"; sf = "";
+                                conjugation += "She: hia " + pr + translation_en + sf + "<br>";
+                                // we
+                                pr = "<strong>ghadi n</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "We: hhna " + pr + translation_en + sf + "<br>";
+                                // you_pl
+                                pr = "<strong>ghadi t</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
+                                // they
+                                pr = "<strong>ghadi y</strong>"; sf = "<strong>o</strong>";
+                                conjugation += "They: houma " + pr + translation_en + sf + "<br>";
+                            }
+                        } else if (type.toLowerCase() === "u") {
+                            // static
+                            pr = ""; sf = "";
+
+                            // Present
+                            conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                            // Present
+                            // I
+                            conjugation += "I: ana " + pr + Data.pr_ana + sf + "<br>";
+                            // you_m
+                            conjugation += "I: nta " + pr + Data.pr_nta + sf + "<br>";
+                            // you_f
+                            conjugation += "I: nti " + pr + Data.pr_nti + sf + "<br>";
+                            // he
+                            conjugation += "I: howa " + pr + Data.pr_howa + sf + "<br>";
+                            // she
+                            conjugation += "I: hiya " + pr + Data.pr_hiya + sf + "<br>";
+                            // we
+                            conjugation += "I: 7na " + pr + Data.pr_7na + sf + "<br>";
+                            // you_pl
+                            conjugation += "I: ntoma " + pr + Data.pr_ntoma + sf + "<br>";
+                            // they
+                            conjugation += "I: homa " + pr + Data.pr_homa + sf + "<br><br>";
+
+                            // Past
+                            conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                            // Past
+                            // I
+                            conjugation += "I: ana " + pr + Data.ps_ana + sf + "<br>";
+                            // you_m
+                            conjugation += "I: nta " + pr + Data.ps_nta + sf + "<br>";
+                            // you_f
+                            conjugation += "I: nti " + pr + Data.ps_nti + sf + "<br>";
+                            // he
+                            conjugation += "I: howa " + pr + Data.ps_howa + sf + "<br>";
+                            // she
+                            conjugation += "I: hiya " + pr + Data.ps_hiya + sf + "<br>";
+                            // we
+                            conjugation += "I: 7na " + pr + Data.ps_7na + sf + "<br>";
+                            // you_pl
+                            conjugation += "I: ntoma " + pr + Data.ps_ntoma + sf + "<br>";
+                            // they
+                            conjugation += "I: homa " + pr + Data.ps_homa + sf + "<br><br>";
+
+                            // Future
+                            conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                            // Future
+                            // I
+                            conjugation += "I: ana " + pr + Data.ft_ana + sf + "<br>";
+                            // you_m
+                            conjugation += "I: nta " + pr + Data.ft_nta + sf + "<br>";
+                            // you_f
+                            conjugation += "I: nti " + pr + Data.ft_nti + sf + "<br>";
+                            // he
+                            conjugation += "I: howa " + pr + Data.ft_howa + sf + "<br>";
+                            // she
+                            conjugation += "I: hiya " + pr + Data.ft_hiya + sf + "<br>";
+                            // we
+                            conjugation += "I: 7na " + pr + Data.ft_7na + sf + "<br>";
+                            // you_pl
+                            conjugation += "I: ntoma " + pr + Data.ft_ntoma + sf + "<br>";
+                            // they
+                            conjugation += "I: homa " + pr + Data.ft_homa + sf + "<br>";
+                        }
+                        translation_en = E;
+
+                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(audio) + "', '" + escapeSingleQuotes(IR) + "');";
+                    }
+                }
+            });
+
+            if (wordIndex === 0) {
+                let mostSimilarWord = "";
+                let mostSimilarTranslation_ar = "";
+                let mostSimilarTranslation_en = "";
+
+                let lowestWordDistance = Number.MAX_SAFE_INTEGER;
+                let lowestTranslation_arDistance = Number.MAX_SAFE_INTEGER;
+                let lowestTranslation_enDistance = Number.MAX_SAFE_INTEGER;
+
+                // Loop through dataList
+                for (let data of dataList) {
+                    let word = data.Word;
+                    let translation_ar = data.A;
+                    let translation_en = data.E;
+
+                    // Calculate Levenshtein distance between word and prefix
+                    let wordDistance = levenshteinDistance(word.toLowerCase(), prefix.toLowerCase());
+
+                    // Calculate Levenshtein distance between Arabic translation and prefix
+                    let translation_arDistance = levenshteinDistance(translation_ar.toLowerCase(), prefix.toLowerCase());
+
+                    // Calculate Levenshtein distance between English translation and prefix
+                    let translation_enDistance = levenshteinDistance(translation_en.toLowerCase(), prefix.toLowerCase());
+
+                    // Update most similar word if current word distance is lower
+                    if (wordDistance < lowestWordDistance) {
+                        lowestWordDistance = wordDistance;
+                        mostSimilarWord = word;
+                    }
+
+                    // Update most similar Arabic translation if current translation distance is lower
+                    if (translation_arDistance < lowestTranslation_arDistance) {
+                        lowestTranslation_arDistance = translation_arDistance;
+                        mostSimilarTranslation_ar = translation_ar;
+                    }
+
+                    // Update most similar English translation if current translation distance is lower
+                    if (translation_enDistance < lowestTranslation_enDistance) {
+                        lowestTranslation_enDistance = translation_enDistance;
+                        mostSimilarTranslation_en = translation_en;
+                    }
+                }
+
+                // Call similarWord function with most similar word and translations
+                similarWord(mostSimilarWord, mostSimilarTranslation_ar, mostSimilarTranslation_en);
+            } else {
+                eval(jsFunction);
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
