@@ -24,7 +24,7 @@
                 </div>
             </li>
 
-            <li onclick="Android.SendMail();">
+            <li onclick="SendMail();">
                 <div>
                     <img src="assets/icons/message.png" alt="Send Message">
                     <p>Contact Us</p>
@@ -1028,7 +1028,7 @@
         function SearchDB(prefix) {
             wordsList.innerHTML = "";
             if (prefix.trim() === '') {
-                return; 
+                return;
             }
 
             wordIndex = 0;
@@ -1403,6 +1403,10 @@
                 eval(jsFunction);
             }
 
+        }
+
+        function SendMail() {
+            window.location.href = "contact.html";
         }
     </script>
 

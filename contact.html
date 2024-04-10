@@ -10,11 +10,11 @@
 </head>
 
 <body>
-   
+
     <div id="main-screen" class="mobile">
         <div class="topbar">
             <div class="header">
-                <img onclick="Android.ClosePage()" src="assets/icons/backwhite.png" alt="Back">
+                <img onclick="ClosePage()" src="assets/icons/backwhite.png" alt="Back">
                 <h1>Darija Dictionary</h1>
                 <img style="visibility: hidden;" src="assets/icons/info.png" alt="About">
             </div>
@@ -33,14 +33,18 @@
                 </div>
 
                 <div class="fieldset">
-                    <button onclick="Android.SendEmailMessage(document.getElementById('txtemail').value,document.getElementById('txtmessage').value)">Send Message</button>
+                    <button
+                        onclick="Android.SendEmailMessage(document.getElementById('txtemail').value,document.getElementById('txtmessage').value)">Send
+                        Message</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-       
+        function ClosePage() {
+            window.location.href = "index.html";
+        }
     </script>
 </body>
 
