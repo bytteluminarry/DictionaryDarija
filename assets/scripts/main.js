@@ -71,13 +71,3 @@ const cardviews = Array.from(document.getElementsByClassName('cardview'));
 function openHomeScreen() {
     popup.style.bottom = "-100%";
 }
-
-const mainSplashscreen = document.getElementById('main-splashscreen')
-
-setInterval(() => {
-    mainScreen.display = "flex";
-    mainSplashscreen.style.pointerEvents = "none";
-    mainSplashscreen.style.opacity = "0";
-    mainSplashscreen.style.left = "-20px";
-    mainSplashscreen.style.top = "-20px";
-}, 1400);

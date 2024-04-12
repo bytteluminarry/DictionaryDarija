@@ -39,12 +39,6 @@
         </ul>
     </div>
 
-    <div class="splashscreen" id="main-splashscreen">
-        <div class="logo">
-            <img src="assets/icons/logo.png" alt="Logo">
-        </div>
-    </div>
-
     <div id="main-screen" class="mobile">
         <div class="topbar">
             <div class="header">
@@ -187,7 +181,7 @@
                 </ul>
             </div>
 
-            <div class="page" style="display:none">
+            <div class="page">
                 <ul id="sentences-list">
                     <li>
                         <div class="cardview">
@@ -484,7 +478,7 @@
                 // Add onclick event for imgListen (assuming functionality is the same)
                 imgListen.onclick = (event) => {
                     event.stopPropagation();
-                    Android.Play(favorite.audio);
+                    Play(favorite.audio);
                 };
 
                 // Add onclick event for imgFavourite (assuming functionality is the same)
@@ -621,7 +615,7 @@
 
             imgListen.onclick = (event) => {
                 event.stopPropagation();
-                Android.Play(audio);
+                Play(audio);
             };
 
             imgFavourite.onclick = (event) => {
@@ -717,7 +711,7 @@
 
             imgListen.onclick = (event) => {
                 event.stopPropagation();
-                Android.Play(audio);
+                Play(audio);
             };
 
             imgFavourite.onclick = (event) => {
@@ -742,7 +736,7 @@
 
         function PlaySound() {
 
-            Android.Play(globalAudio);
+            Play(globalAudio);
         }
 
         function wordNotFound(text) {
@@ -1408,6 +1402,19 @@
         function SendMail() {
             window.location.href = "contact.html";
         }
+
+        function Play(text) {
+            if ('speechSynthesis' in window) {
+                let utterance = new SpeechSynthesisUtterance(text);
+
+                speechSynthesis.getVoices().forEach(voice => {
+                    console.log(voice.lang, voice.name);
+                });
+                utterance.lang = 'ar';
+                speechSynthesis.speak(utterance);
+            }
+        }
+
     </script>
 
 </body>
