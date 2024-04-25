@@ -1343,7 +1343,7 @@
                         }
                         translation_en = E;
 
-                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(audio) + "', '" + escapeSingleQuotes(IR) + "');";
+                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(arabicWord) + "', '" + escapeSingleQuotes(IR) + "');";
                     }
                 }
             });
@@ -1406,11 +1406,10 @@
         function Play(text) {
             if ('speechSynthesis' in window) {
                 let utterance = new SpeechSynthesisUtterance(text);
-
                 speechSynthesis.getVoices().forEach(voice => {
                     console.log(voice.lang, voice.name);
                 });
-                utterance.lang = 'ar';
+                utterance.lang = 'ar-MA';
                 speechSynthesis.speak(utterance);
             }
         }
