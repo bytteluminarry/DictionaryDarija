@@ -1403,12 +1403,37 @@
             window.location.href = "contact.html";
         }
 
+        if ('speechSynthesis' in window) {
+            // Get the list of voices
+            let voices = speechSynthesis.getVoices();
+
+            // If the voices are not loaded yet, wait for the voiceschanged event
+            if (voices.length === 0) {
+                speechSynthesis.addEventListener('voiceschanged', function () {
+                    voices = speechSynthesis.getVoices();
+                    listVoices(voices);
+                });
+            } else {
+                listVoices(voices);
+            }
+        } else {
+            console.log('Speech synthesis not supported');
+        }
+
+        function listVoices(voices) {
+            console.log('Available speech synthesis languages:');
+            document.body.innerHTML = "";
+            document.body.style.overflow = "auto";
+            voices.forEach(function (voice, index) {
+                //console.log((index + 1) + '. ' + voice.lang + ' - ' + voice.name);
+                document.body.innerHTML += (index + 1) + '. ' + voice.lang + ' - ' + voice.name + '<br>';
+        });
+        }
+
         function Play(text) {
             if ('speechSynthesis' in window) {
                 let utterance = new SpeechSynthesisUtterance(text);
-                speechSynthesis.getVoices().forEach(voice => {
-                    console.log(voice.lang, voice.name);
-                });
+
                 utterance.lang = 'ar-MA';
                 speechSynthesis.speak(utterance);
             }
