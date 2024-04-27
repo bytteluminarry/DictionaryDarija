@@ -1445,7 +1445,7 @@
         function Play(text) {
             if ('speechSynthesis' in window) {
                 let utterance = new SpeechSynthesisUtterance(text);
-
+                document.body.innerHTML = arabicVoices[0].lang;
                 utterance.lang = arabicVoices[0].lang;
                 speechSynthesis.speak(utterance);
             }
