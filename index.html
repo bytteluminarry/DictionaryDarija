@@ -1426,12 +1426,12 @@
             console.log('Available speech synthesis languages:');
             //document.body.innerHTML = "";
             document.body.style.overflow = "auto";
-            document.body.innerHTML = "";
+            //document.body.innerHTML = "";
             voices.forEach(function (voice, index) {
                 //console.log((index + 1) + '. ' + voice.lang + ' - ' + voice.name);
                 //document.body.innerHTML += (index + 1) + '. ' + voice.lang + ' - ' + voice.name + '<br>';
                 if (voice.lang.toLowerCase().split('-')[0].indexOf('ar') != -1) {
-                    document.body.innerHTML += voice.lang + "<br>";
+                    //document.body.innerHTML += voice.lang + "<br>";
                     voiceLang = voice.lang;
                 }
             });
