@@ -1433,7 +1433,7 @@
             });
 
             arabicVoices = voices.filter(function (voice) {
-                return voice.lang.includes('ar');
+                return voice.lang.indexOf('ar') != -1;
             });
             if (arabicVoices.length > 0) {
                 document.body.innerHTML += "here:  " +arabicVoices[0].lang;
