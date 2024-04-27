@@ -1426,15 +1426,17 @@
             console.log('Available speech synthesis languages:');
             //document.body.innerHTML = "";
             document.body.style.overflow = "auto";
+            document.body.innerHTML = "";
             voices.forEach(function (voice, index) {
                 //console.log((index + 1) + '. ' + voice.lang + ' - ' + voice.name);
-                //document.body.innerHTML += (index + 1) + '. ' + voice.lang + ' - ' + voice.name + '<br>';
+                document.body.innerHTML += (index + 1) + '. ' + voice.lang + ' - ' + voice.name + '<br>';
             });
 
             arabicVoices = voices.filter(function (voice) {
                 return voice.lang.includes('ar');
             });
             if (arabicVoices.length > 0) {
+                document.body.innerHTML += "here:  " +arabicVoices[0].lang;
                 console.log('1. ' + arabicVoices[0].lang + ' - ' + arabicVoices[0].name);
             } else {
                 console.log('No Arabic speech synthesis language available');
@@ -1445,7 +1447,7 @@
         function Play(text) {
             if ('speechSynthesis' in window) {
                 let utterance = new SpeechSynthesisUtterance(text);
-                document.body.innerHTML = arabicVoices[0].lang;
+                
                 utterance.lang = arabicVoices[0].lang;
                 speechSynthesis.speak(utterance);
             }
