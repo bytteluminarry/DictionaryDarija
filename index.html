@@ -3,7 +3,7 @@
 
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dictionary</title>
@@ -370,6 +370,7 @@
         </div>
     </div>
 
+    <a id="speaker" onclick="speech_text()" style="opacity: 0;"></a>
 
     <script src="assets/scripts/main.js"></script>
     <script>
@@ -1422,44 +1423,21 @@
             console.log('Speech synthesis not supported');
         }
 
-        let voiceLang = "";
-
-        function listVoices(voices) {
-            console.log('Available speech synthesis languages:');
-            //document.body.innerHTML = "";
-            document.body.style.overflow = "auto";
-            //document.body.innerHTML = "";
-            voices.forEach(function (voice, index) {
-                //console.log((index + 1) + '. ' + voice.lang + ' - ' + voice.name);
-                //document.body.innerHTML += (index + 1) + '. ' + voice.lang + ' - ' + voice.name + '<br>';
-                if (voice.lang.toLowerCase().split('-')[0].indexOf('ar') != -1) {
-                    //document.body.innerHTML += voice.lang + "<br>";
-                    voiceLang = voice.lang;
-                }
-            });
-
-        }
+        let globalText = "";
 
         function Play(text) {
+            globalText = text;
+            document.getElementById("speaker").click();
+        }
+
+        function speech_text() {
             if ('speechSynthesis' in window) {
-                let utterance = new SpeechSynthesisUtterance(text);
+                let utterance = new SpeechSynthesisUtterance(globalText);
 
                 utterance.lang = "ar";
                 speechSynthesis.speak(utterance);
             }
         }
-
-        let hasEnabledVoice = false;
-
-document.addEventListener('click', () => {
-  if (hasEnabledVoice) {
-    return;
-  }
-  const lecture = new SpeechSynthesisUtterance('hello');
-  lecture.volume = 0;
-  speechSynthesis.speak(lecture);
-  hasEnabledVoice = true;
-});
     </script>
 
 </body>
