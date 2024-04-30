@@ -1432,6 +1432,8 @@
             speech.lang = 'en-US';
             //speech.voice = voices[gender];
             //speech.voiceURI = voices[gender].voiceURI;
+
+            speechSynthesis.speak(speech);
         }
 
         window.onload = function () {
