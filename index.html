@@ -57,8 +57,8 @@
                 <img onclick="SearchDB(document.getElementById('searchQuery').value)" src="assets/icons/search.png"
                     alt="Search">
             </div>
-            <button
-                onclick="textToSpeech('مرحبًا هناك، مرحبًا هناك، مرحبًا هناك، مرحبًا هناك')">Speak</button>
+            <button onclick="textToSpeech('مرحبًا هناك، مرحبًا هناك، مرحبًا هناك، مرحبًا هناك')">Speak</button>
+            <button onclick="textToSpeech2('hello there, hello there, hello there,')">Speak</button>
         </div>
 
         <div class="maincontent" id="maincontent1">
@@ -1432,6 +1432,20 @@
             speech.rate = 1;
             speech.pitch = 1;
             speech.lang = 'ar-001';
+            //speech.voice = voices[gender];
+            //speech.voiceURI = voices[gender].voiceURI;
+
+            window.speechSynthesis.speak(speech);
+        }
+
+        function textToSpeech2(text) {
+            let speech = new SpeechSynthesisUtterance(text);
+            //let gender = this.state.gender;
+
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            speech.lang = 'en-US';
             //speech.voice = voices[gender];
             //speech.voiceURI = voices[gender].voiceURI;
 
