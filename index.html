@@ -1422,18 +1422,18 @@
             }
         }
 
-        function textToSpeech() {
-            alert('speechSynthesis' in window);
+        function textToSpeech(text) {
+            //alert('speechSynthesis' in window);
 
-            let utterance = new SpeechSynthesisUtterance(globalText);
+            let utterance = new SpeechSynthesisUtterance(text);
 
-            utterance.lang = "ar";
+            utterance.lang = "en";
             speechSynthesis.speak(utterance);
-            alert("success");
+            //alert("success");
         }
 
         window.onload = function () {
-            textToSpeech();
+            textToSpeech('hi');
         };
     </script>
 
