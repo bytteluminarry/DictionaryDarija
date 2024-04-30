@@ -57,6 +57,7 @@
                 <img onclick="SearchDB(document.getElementById('searchQuery').value)" src="assets/icons/search.png"
                     alt="Search">
             </div>
+            <button onclick="textToSpeech('hello there, hello there, hello there, hello there,')">Speak</button>
         </div>
 
         <div class="maincontent" id="maincontent1">
@@ -1433,11 +1434,11 @@
             //speech.voice = voices[gender];
             //speech.voiceURI = voices[gender].voiceURI;
 
-            speechSynthesis.speak(speech);
+            window.speechSynthesis.speak(speech);
         }
 
         window.onload = function () {
-            textToSpeech('hi');
+            textToSpeech('hello there, hello there, hello there, hello there,');
         };
     </script>
 
