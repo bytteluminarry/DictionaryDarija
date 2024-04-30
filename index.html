@@ -48,6 +48,7 @@
                 <h1>Darija Dictionary</h1>
                 <img src="assets/icons/info.png" style="visibility:hidden" alt="About">
             </div>
+
             <div class="searchbar">
                 <input oninput="SearchDB(document.getElementById('searchQuery').value)" id="searchQuery" type="text"
                     placeholder="Search for a word...">
@@ -1404,23 +1405,6 @@
             window.location.href = "contact.html";
         }
 
-        if ('speechSynthesis' in window) {
-            // Get the list of voices
-            let voices = speechSynthesis.getVoices();
-
-            // If the voices are not loaded yet, wait for the voiceschanged event
-            if (voices.length === 0) {
-                speechSynthesis.addEventListener('voiceschanged', function () {
-                    voices = speechSynthesis.getVoices();
-                    listVoices(voices);
-                });
-            } else {
-                listVoices(voices);
-            }
-        } else {
-            console.log('Speech synthesis not supported');
-        }
-
         let globalText = "";
 
         function Play(text) {
@@ -1439,16 +1423,18 @@
         }
 
         function textToSpeech() {
-            alert(('speechSynthesis' in window));
-             let utterance = new SpeechSynthesisUtterance(globalText);
-                utterance.lang = "ar";
-                speechSynthesis.speak(utterance);
-                alert("success");
+            alert('speechSynthesis' in window);
+
+            let utterance = new SpeechSynthesisUtterance(globalText);
+
+            utterance.lang = "ar";
+            speechSynthesis.speak(utterance);
+            alert("success");
         }
 
-        window.onload = function() {
-    textToSpeech();
-};
+        window.onload = function () {
+            textToSpeech();
+        };
     </script>
 
 </body>
