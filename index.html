@@ -48,8 +48,6 @@
                 <h1>Darija Dictionary</h1>
                 <img src="assets/icons/info.png" style="visibility:hidden" alt="About">
             </div>
-            <a id="speaker" onclick="speech_text()" style=""></a>
-            <button id="speakerBtn" onclick="textToSpeech()" style="">Click Here</button>
             <div class="searchbar">
                 <input oninput="SearchDB(document.getElementById('searchQuery').value)" id="searchQuery" type="text"
                     placeholder="Search for a word...">
@@ -1442,12 +1440,14 @@
 
         function textToSpeech() {
             if ('speechSynthesis' in window) {
-                let utterance = new SpeechSynthesisUtterance(globalText);
+               
 
+            }
+            alert(('speechSynthesis' in window));
+             let utterance = new SpeechSynthesisUtterance(globalText);
                 utterance.lang = "ar";
                 speechSynthesis.speak(utterance);
                 alert("success");
-            }
         }
     </script>
 
