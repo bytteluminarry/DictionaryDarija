@@ -1439,16 +1439,16 @@
         }
 
         function textToSpeech() {
-            if ('speechSynthesis' in window) {
-               
-
-            }
             alert(('speechSynthesis' in window));
              let utterance = new SpeechSynthesisUtterance(globalText);
                 utterance.lang = "ar";
                 speechSynthesis.speak(utterance);
                 alert("success");
         }
+
+        window.onload = function() {
+    textToSpeech();
+};
     </script>
 
 </body>
