@@ -1422,26 +1422,26 @@
             // This function is triggered by the button in the HTML.
             // Wait for the voices to be loaded.
             alert("0");
-            speechSynthesis.onvoiceschanged = function () {
-                alert("1");
-                var voices = speechSynthesis.getVoices();
-                console.log(voices); // Optional: Log available voices.
+            //speechSynthesis.onvoiceschanged = function () {
+            alert("1");
+            var voices = speechSynthesis.getVoices();
+            console.log(voices); // Optional: Log available voices.
 
-                // Attempt to find an Arabic voice.
-                var arabicVoice = voices.find(voice => voice.lang === 'ar-SA' || voice.lang.startsWith('ar'));
+            // Attempt to find an Arabic voice.
+            var arabicVoice = voices.find(voice => voice.lang === 'ar-SA' || voice.lang.startsWith('ar'));
 
-                alert("2");
-                if (arabicVoice) {
-                    var msg = new SpeechSynthesisUtterance('مرحبا كيف حالك؟');
-                    msg.voice = arabicVoice; // Set the voice to the found Arabic voice.
-                    msg.lang = arabicVoice.lang; // Set the lang property to match the voice's language.
+            alert("2");
+            if (arabicVoice) {
+                var msg = new SpeechSynthesisUtterance('مرحبا كيف حالك؟');
+                msg.voice = arabicVoice; // Set the voice to the found Arabic voice.
+                msg.lang = arabicVoice.lang; // Set the lang property to match the voice's language.
 
-                    speechSynthesis.speak(msg);
-                    alert(arabicVoice + " " + arabicVoice.lang);
-                } else {
-                    alert('Arabic voice not available.');
-                }
-            };
+                speechSynthesis.speak(msg);
+                alert(arabicVoice + " " + arabicVoice.lang);
+            } else {
+                alert('Arabic voice not available.');
+            }
+            //};
         }
     </script>
 
