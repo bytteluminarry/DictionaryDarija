@@ -1435,6 +1435,8 @@
                 msg.lang = arabicVoice.lang; // Set the lang property to match the voice's language.
 
                 speechSynthesis.speak(msg);
+
+                alert(msg);
             } else {
                 alert('Arabic voice not available.');
             }
