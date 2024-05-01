@@ -1430,7 +1430,7 @@
             var arabicVoice = voices.find(voice => voice.lang === 'ar-SA' || voice.lang.startsWith('ar'));
 
             if (arabicVoice) {
-                var msg = new SpeechSynthesisUtterance('مرحبا كيف حالك؟');
+                var msg = new SpeechSynthesisUtterance(globalText);
                 msg.voice = arabicVoice; // Set the voice to the found Arabic voice.
                 msg.lang = arabicVoice.lang; // Set the lang property to match the voice's language.
 
