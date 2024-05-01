@@ -1417,16 +1417,20 @@
             document.getElementById('btn1').click();
         }
 
+        alert("hi");
         function textToSpeech2() {
             // This function is triggered by the button in the HTML.
             // Wait for the voices to be loaded.
+            alert("0");
             speechSynthesis.onvoiceschanged = function () {
+                alert("1");
                 var voices = speechSynthesis.getVoices();
                 console.log(voices); // Optional: Log available voices.
 
                 // Attempt to find an Arabic voice.
                 var arabicVoice = voices.find(voice => voice.lang === 'ar-SA' || voice.lang.startsWith('ar'));
 
+                alert("2");
                 if (arabicVoice) {
                     var msg = new SpeechSynthesisUtterance('مرحبا كيف حالك؟');
                     msg.voice = arabicVoice; // Set the voice to the found Arabic voice.
