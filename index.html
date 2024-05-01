@@ -1418,8 +1418,9 @@
         }
 
         function textToSpeech2() {
-         
-speechSynthesis.onvoiceschanged = function() {
+            // This function is triggered by the button in the HTML.
+            // Wait for the voices to be loaded.
+            speechSynthesis.onvoiceschanged = function () {
                 var voices = speechSynthesis.getVoices();
                 console.log(voices); // Optional: Log available voices.
 
@@ -1432,8 +1433,9 @@ speechSynthesis.onvoiceschanged = function() {
                     msg.lang = arabicVoice.lang; // Set the lang property to match the voice's language.
 
                     speechSynthesis.speak(msg);
+                    alert(arabicVoice + " " + arabicVoice.lang);
                 } else {
-                    console.log('Arabic voice not available.');
+                    alert('Arabic voice not available.');
                 }
             };
         }
