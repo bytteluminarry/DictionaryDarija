@@ -1346,7 +1346,7 @@
                         }
                         translation_en = E;
 
-                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(IR) + "');";
+                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(arabicWord) + "', '" + escapeSingleQuotes(IR) + "');";
                     }
                 }
             });
@@ -1418,17 +1418,18 @@
         }
 
         function textToSpeech2() {
-            let speech = new SpeechSynthesisUtterance(globalText);
-            //let gender = this.state.gender;
-            
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-            speech.lang = 'fr-FR';
-            //speech.voice = voices[gender];
-            //speech.voiceURI = voices[gender].voiceURI;
+            // Create a new instance of SpeechSynthesisUtterance
+            var message = new SpeechSynthesisUtterance();
 
-            window.speechSynthesis.speak(speech);
+            // Set the text you want to be spoken
+            message.text = "مرحباً، كيف حالك؟";
+
+            // Set the language to Arabic (Saudi Arabia)
+            message.lang = 'ar-SA';
+
+            // Speak the message
+            window.speechSynthesis.speak(message);
+
         }
     </script>
 
