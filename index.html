@@ -57,8 +57,7 @@
                 <img onclick="SearchDB(document.getElementById('searchQuery').value)" src="assets/icons/search.png"
                     alt="Search">
             </div>
-            <button onclick="textToSpeech('مرحبًا هناك، مرحبًا هناك، مرحبًا هناك، مرحبًا هناك')">Speak</button>
-            <button onclick="textToSpeech2('hello there, hello there, hello there,')">Speak</button>
+            <button id="btn1" style="display:none" onclick="textToSpeech2()">Speak</button>
         </div>
 
         <div class="maincontent" id="maincontent1">
@@ -1347,7 +1346,7 @@
                         }
                         translation_en = E;
 
-                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(arabicWord) + "', '" + escapeSingleQuotes(IR) + "');";
+                        jsFunction += "processWord('" + escapeSingleQuotes(word) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(translation_ar) + "', '" + escapeSingleQuotes(type.toLowerCase()) + "', '" + escapeSingleQuotes(conjugation) + "', '" + escapeSingleQuotes(translation_en) + "', '" + escapeSingleQuotes(IR) + "');";
                     }
                 }
             });
@@ -1411,50 +1410,26 @@
 
         function Play(text) {
             globalText = text;
-            document.getElementById("speaker").click();
+            speech_text();
         }
 
         function speech_text() {
-            if ('speechSynthesis' in window) {
-                let utterance = new SpeechSynthesisUtterance(globalText);
-
-                utterance.lang = "ar";
-                speechSynthesis.speak(utterance);
-                alert(globalText);
-            }
+            document.getElementById('btn1').click();
         }
 
-        function textToSpeech(text) {
-            let speech = new SpeechSynthesisUtterance(text);
+        function textToSpeech2() {
+            let speech = new SpeechSynthesisUtterance(globalText);
             //let gender = this.state.gender;
-
+            
             speech.volume = 1;
             speech.rate = 1;
             speech.pitch = 1;
-            speech.lang = 'ar-001';
+            speech.lang = 'fr-FR';
             //speech.voice = voices[gender];
             //speech.voiceURI = voices[gender].voiceURI;
 
             window.speechSynthesis.speak(speech);
         }
-
-        function textToSpeech2(text) {
-            let speech = new SpeechSynthesisUtterance(text);
-            //let gender = this.state.gender;
-
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-            speech.lang = 'en-US';
-            //speech.voice = voices[gender];
-            //speech.voiceURI = voices[gender].voiceURI;
-
-            window.speechSynthesis.speak(speech);
-        }
-
-        window.onload = function () {
-            textToSpeech('hello there, hello there, hello there, hello there,');
-        };
     </script>
 
 </body>
