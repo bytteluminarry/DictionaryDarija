@@ -1082,9 +1082,9 @@
 
                         if (arabicWord.charAt(arabicWord.length - 1) === 'ا') {
                             // If so, replace it with 'اَ'
-                            arabicWord = arabicWord.slice(0, -1);
+                            //arabicWord = arabicWord.slice(0, -1);
                             // Add the last letter with 'َ'
-                            arabicWord +=  '';
+                            arabicWord +=  'اَ'; 
                         }
 
                         var pr = "", sf = "";
@@ -1445,7 +1445,7 @@
 
                 alert(globalText);
             } else {
-                alert('Arabic voice not available.');
+                //alert('Arabic voice not available.');
             }
             //};
         }
