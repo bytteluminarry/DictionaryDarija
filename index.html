@@ -1076,7 +1076,7 @@
                             arabicWord = arabicWord.charAt(0) + "ْ" + arabicWord.substring(1);
                         }
 
-                        arabicWord = arabicWord.charAt(0) + "ْ" + arabicWord.substring(1);
+                        //arabicWord = arabicWord.charAt(0) + "ْ" + arabicWord.substring(1);
 
                         arabicWord = arabicWord.replace(/ي/g, "يِ");
 
@@ -1084,7 +1084,7 @@
                             // If so, replace it with 'اَ'
                             //arabicWord = arabicWord.slice(0, -1);
                             // Add the last letter with 'َ'
-                            arabicWord +=  'اَ'; 
+                            arabicWord +=  'اَى'; 
                         }
 
                         var pr = "", sf = "";
@@ -1443,7 +1443,7 @@
 
                 speechSynthesis.speak(msg);
 
-                alert(globalText);
+                //alert(globalText);
             } else {
                 //alert('Arabic voice not available.');
             }
