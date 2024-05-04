@@ -1431,7 +1431,7 @@
             // Wait for the voices to be loaded.
             //speechSynthesis.onvoiceschanged = function () {
             var voices = speechSynthesis.getVoices();
-            console.log(voices); // Optional: Log available voices.
+            //console.log(voices); // Optional: Log available voices.
 
             // Attempt to find an Arabic voice.
             var arabicVoice = voices.find(voice => voice.lang === 'ar-SA' || voice.lang.startsWith('ar'));
