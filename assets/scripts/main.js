@@ -8,7 +8,8 @@ function openLeftNav() {
     mainScreen.style.left = "80%";
     mainScreen.style.height = "80%";
 
-    mainScreen.style.borderRadius = "40px";
+    //mainScreen.style.borderRadius = "40px";
+    mainScreen.style.opacity = "0.7";
 
     popup.style.left = "80%";
     popup.style.height = "calc(91% - 60px)";
@@ -20,7 +21,8 @@ function closeLeftNav() {
     mainScreen.style.left = "0";
     mainScreen.style.height = "100%";
 
-    mainScreen.style.borderRadius = "0";
+    //mainScreen.style.borderRadius = "0";
+    mainScreen.style.opacity = "1";
 
     popup.style.left = "0";
     popup.style.height = "calc(100% - 60px)";
@@ -33,31 +35,31 @@ let tmpPage = pages[0];
 pages[1].style.pointerEvents = "none";
 pages[2].style.pointerEvents = "none";
 
- function toggleMenuItem(item) {
-  // Get all elements with the class "item"
-  const items = document.querySelectorAll('.item');
+function toggleMenuItem(item) {
+    // Get all elements with the class "item"
+    const items = document.querySelectorAll('.item');
 
-  // Loop through each item
-  for (const otherItem of items) {
-    // Remove the "active" class from all items except the provided one
-    otherItem.classList.remove('active');
-  }
+    // Loop through each item
+    for (const otherItem of items) {
+        // Remove the "active" class from all items except the provided one
+        otherItem.classList.remove('active');
+    }
 
-  // Add the "active" class to the provided item
-  item.classList.add('active');
+    // Add the "active" class to the provided item
+    item.classList.add('active');
 }
 
 menuItems.forEach((item, index) => {
     item.onclick = () => {
-    toggleMenuItem(item);
+        toggleMenuItem(item);
         if (tmpPage != null) {
-            if (tmpPage.classList.contains('active')){
+            if (tmpPage.classList.contains('active')) {
                 tmpPage.classList.remove('active');
                 tmpPage.style.pointerEvents = "none";
             }
         }
 
-        if (!pages[index].classList.contains('active')){
+        if (!pages[index].classList.contains('active')) {
             pages[index].classList.add('active');
             pages[index].style.pointerEvents = "auto";
         }

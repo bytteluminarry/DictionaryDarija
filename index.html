@@ -336,7 +336,7 @@
         <div style="background-color: transparent;" class="topbar">
             <div class="header">
                 <img onclick="openHomeScreen()" src="assets/icons/close.png" alt="Menu">
-                <h2>More Details</h2>
+                <h2>Conjugation</h2>
                 <img src="assets/icons/info.png" alt="About" style="opacity: 0">
             </div>
         </div>
@@ -359,14 +359,14 @@
                 tristique senectus et netus et malesuada fames ac turpis egestas.</p>
         </div>
 
-        <div style="background-color: #f5f5f5; grid-template-columns: repeat(2, 1fr);" class="menubar">
+        <div style="grid-template-columns: repeat(2, 1fr);" class="menubar">
             <div class="element" onclick="PlaySound()">
-                <img src="assets/icons/speaker.png" alt="Listen">
+                <img style="opacity: 1" src="assets/icons/speakerw.png" alt="Listen">
                 <p>Listen</p>
             </div>
 
             <div class="element" onclick="Android.SendMail();">
-                <img src="assets/icons/ask.png" alt="Ask Us">
+                <img style="opacity: 1" src="assets/icons/ask.png" alt="Ask Us">
                 <p>Ask Us</p>
             </div>
         </div>
@@ -399,6 +399,21 @@
 
             favorites.forEach((favorite) => {
                 // Create elements for the favorite word
+                let str = favorite.conjugation;
+                let presentIndex = str.indexOf("__Present__:");
+                let pastIndex = str.indexOf("__Past__:");
+                let futureIndex = str.indexOf("__Future__:");
+
+                if (presentIndex !== -1 && pastIndex !== -1 && futureIndex !== -1) {
+                    let presentText = str.slice(presentIndex + "__Present__:".length, pastIndex).trim();
+                    let pastText = str.slice(pastIndex + "__Past__:".length, futureIndex).trim();
+                    let futureText = str.slice(futureIndex + "__Future__:".length).trim();
+
+                    favorite.conjugation = `<div class='conjugation'><div class='label'><p>Present</p></div>${presentText}</div>`;
+                    favorite.conjugation += `<div class='conjugation'><div class='label'><p>Past</p></div>${pastText}</div>`;
+                    favorite.conjugation += `<div class='conjugation'><div class='label'><p>Future</p></div>${futureText}</div>`;
+                }
+
                 let listItem = document.createElement("li");
                 let cardview = document.createElement("div");
                 cardview.className = "cardview";
@@ -433,11 +448,18 @@
                 let imgListen = document.createElement("img");
                 imgListen.src = "assets/icons/speaker.png";
                 imgListen.alt = "Listen";
+                var divListen = document.createElement("div");
+                divListen.className = "img-container";
+                divListen.appendChild(imgListen);
+
                 let imgFavourite = document.createElement("img");
                 imgFavourite.src = "assets/icons/favourite-filled.png"; // Assuming all favorites are filled initially
                 imgFavourite.alt = "Favourite";
-                actions.appendChild(imgListen);
-                actions.appendChild(imgFavourite);
+                var divFavourite = document.createElement("div");
+                divFavourite.className = "img-container";
+                divFavourite.appendChild(imgFavourite);
+                actions.appendChild(divListen);
+                actions.appendChild(divFavourite);
 
                 details.appendChild(informative2);
                 details.appendChild(actions);
@@ -505,6 +527,23 @@
 
 
         function processWord(word, translation_en, translation_ar, type, conjugation, audio, IR) {
+
+            let str = conjugation;
+
+            let presentIndex = str.indexOf("__Present__:");
+            let pastIndex = str.indexOf("__Past__:");
+            let futureIndex = str.indexOf("__Future__:");
+
+            if (presentIndex !== -1 && pastIndex !== -1 && futureIndex !== -1) {
+                let presentText = str.slice(presentIndex + "__Present__:".length, pastIndex).trim();
+                let pastText = str.slice(pastIndex + "__Past__:".length, futureIndex).trim();
+                let futureText = str.slice(futureIndex + "__Future__:".length).trim();
+
+                conjugation = `<div class='conjugation'><div class='label'><p>Present</p></div>${presentText}</div>`;
+                conjugation += `<div class='conjugation'><div class='label'><p>Past</p></div>${pastText}</div>`;
+                conjugation += `<div class='conjugation'><div class='label'><p>Future</p></div>${futureText}</div>`;
+            }
+
             if (type.toLowerCase().trim() === "u") {
                 type = "verb";
             }
@@ -527,7 +566,7 @@
             wordElem1.innerText = word;
             var infoElem1 = document.createElement("p");
             infoElem1.className = "info";
-            infoElem1.innerText = "(" + type + ")";
+            //infoElem1.innerText = "(" + type + ")";
             informative1.appendChild(wordElem1);
             informative1.appendChild(infoElem1);
 
@@ -550,6 +589,10 @@
             var imgListen = document.createElement("img");
             imgListen.src = "assets/icons/speaker.png";
             imgListen.alt = "Listen";
+            var divListen = document.createElement("div");
+            divListen.className = "img-container";
+            divListen.appendChild(imgListen);
+
             var imgFavourite = document.createElement("img");
 
             const existingIndex = favorites.findIndex(item => item.word === word);
@@ -562,8 +605,11 @@
             }
 
             imgFavourite.alt = "Favourite";
-            actions.appendChild(imgListen);
-            actions.appendChild(imgFavourite);
+            var divFavourite = document.createElement("div");
+            divFavourite.className = "img-container";
+            divFavourite.appendChild(imgFavourite);
+            actions.appendChild(divListen);
+            actions.appendChild(divFavourite);
 
             details.appendChild(informative2);
             details.appendChild(actions);
@@ -1084,7 +1130,7 @@
                             // If so, replace it with 'اَ'
                             //arabicWord = arabicWord.slice(0, -1);
                             // Add the last letter with 'َ'
-                            arabicWord +=  'اَى'; 
+                            arabicWord += 'اَى';
                         }
 
                         var pr = "", sf = "";
@@ -1103,7 +1149,7 @@
                                     }
 
                                     // Present
-                                    conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                                    conjugation = "__Present__:";
                                     // Present
                                     // I
                                     pr = "<strong>kan</strong>"; sf = "";
@@ -1128,10 +1174,10 @@
                                     conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
                                     // they
                                     pr = "<strong>kay</strong>"; sf = "<strong>o</strong>";
-                                    conjugation += "They: houma " + pr + translation_en + sf + "<br><br>";
+                                    conjugation += "They: houma " + pr + translation_en + sf + "__Past__:";
 
                                     // Past
-                                    conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                                    conjugation += "__Past__:";
                                     // Past
                                     // I
                                     pr = ""; sf = "<strong>t</strong>";
@@ -1156,10 +1202,10 @@
                                     conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
                                     // they
                                     pr = ""; sf = "<strong>o</strong>";
-                                    conjugation += "They: houma " + pr + E + sf + "<br><br>";
+                                    conjugation += "They: houma " + pr + E + sf + "__Past__:";
 
                                     // Future
-                                    conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                                    conjugation += "__Future__:";
                                     // Future
                                     // I
                                     pr = "<strong>ghadi n</strong>"; sf = "";
@@ -1196,7 +1242,7 @@
                                 var tmp = translation_en;
 
                                 // Present
-                                conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                                conjugation = "__Present__:";
                                 // Present
                                 // I
                                 pr = "<strong>kan</strong>"; sf = "";
@@ -1221,7 +1267,7 @@
                                 conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
                                 // they
                                 pr = "<strong>kay</strong>"; sf = "<strong>o</strong>";
-                                conjugation += "They: houma " + pr + translation_en + sf + "<br><br>";
+                                conjugation += "They: houma " + pr + translation_en + sf + "__Past__:";
 
                                 if (translation_ar.endsWith("ا")) {
                                     if (translation_en.endsWith("a")) {
@@ -1230,7 +1276,7 @@
                                 }
 
                                 // Past
-                                conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                                conjugation += "__Past__:";
                                 // Past
                                 // I
                                 pr = ""; sf = "<strong>t</strong>";
@@ -1255,12 +1301,12 @@
                                 conjugation += "You(pl): ntouma " + pr + translation_en + sf + "<br>";
                                 // they
                                 pr = ""; sf = "<strong>o</strong>";
-                                conjugation += "They: houma " + pr + E + sf + "<br><br>";
+                                conjugation += "They: houma " + pr + E + sf + "__Past__:";
 
                                 translation_en = tmp;
 
                                 // Future
-                                conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                                conjugation += "__Future__:";
                                 // Future
                                 // I
                                 pr = "<strong>ghadi n</strong>"; sf = "";
@@ -1292,47 +1338,47 @@
                             pr = ""; sf = "";
 
                             // Present
-                            conjugation = "<strong style='font-size: 1.4rem'>Present: </strong><br><br>";
+                            conjugation = "__Present__:";
                             // Present
                             // I
                             conjugation += "I: ana " + pr + Data.pr_ana + sf + "<br>";
                             // you_m
-                            conjugation += "I: nta " + pr + Data.pr_nta + sf + "<br>";
+                            conjugation += "You(m): nta " + pr + Data.pr_nta + sf + "<br>";
                             // you_f
-                            conjugation += "I: nti " + pr + Data.pr_nti + sf + "<br>";
+                            conjugation += "You(f): nti " + pr + Data.pr_nti + sf + "<br>";
                             // he
-                            conjugation += "I: howa " + pr + Data.pr_howa + sf + "<br>";
+                            conjugation += "He: howa " + pr + Data.pr_howa + sf + "<br>";
                             // she
-                            conjugation += "I: hiya " + pr + Data.pr_hiya + sf + "<br>";
+                            conjugation += "She: hiya " + pr + Data.pr_hiya + sf + "<br>";
                             // we
-                            conjugation += "I: 7na " + pr + Data.pr_7na + sf + "<br>";
+                            conjugation += "We: 7na " + pr + Data.pr_7na + sf + "<br>";
                             // you_pl
-                            conjugation += "I: ntoma " + pr + Data.pr_ntoma + sf + "<br>";
+                            conjugation += "You(pl): ntoma " + pr + Data.pr_ntoma + sf + "<br>";
                             // they
-                            conjugation += "I: homa " + pr + Data.pr_homa + sf + "<br><br>";
+                            conjugation += "They: homa " + pr + Data.pr_homa + sf + "__Past__:";
 
                             // Past
-                            conjugation += "<strong style='font-size: 1.4rem'>Past: </strong><br><br>";
+                            conjugation += "__Past__:";
                             // Past
                             // I
                             conjugation += "I: ana " + pr + Data.ps_ana + sf + "<br>";
                             // you_m
-                            conjugation += "I: nta " + pr + Data.ps_nta + sf + "<br>";
+                            conjugation += "You(m): nta " + pr + Data.ps_nta + sf + "<br>";
                             // you_f
-                            conjugation += "I: nti " + pr + Data.ps_nti + sf + "<br>";
+                            conjugation += "You(f): nti " + pr + Data.ps_nti + sf + "<br>";
                             // he
-                            conjugation += "I: howa " + pr + Data.ps_howa + sf + "<br>";
+                            conjugation += "He: howa " + pr + Data.ps_howa + sf + "<br>";
                             // she
-                            conjugation += "I: hiya " + pr + Data.ps_hiya + sf + "<br>";
+                            conjugation += "She: hiya " + pr + Data.ps_hiya + sf + "<br>";
                             // we
-                            conjugation += "I: 7na " + pr + Data.ps_7na + sf + "<br>";
+                            conjugation += "We: 7na " + pr + Data.ps_7na + sf + "<br>";
                             // you_pl
-                            conjugation += "I: ntoma " + pr + Data.ps_ntoma + sf + "<br>";
+                            conjugation += "You(pl): ntoma " + pr + Data.ps_ntoma + sf + "<br>";
                             // they
-                            conjugation += "I: homa " + pr + Data.ps_homa + sf + "<br><br>";
+                            conjugation += "They: homa " + pr + Data.ps_homa + sf + "__Past__:";
 
                             // Future
-                            conjugation += "<strong style='font-size: 1.4rem'>Future: </strong><br><br>";
+                            conjugation += "__Future__:";
                             // Future
                             // I
                             conjugation += "I: ana " + pr + Data.ft_ana + sf + "<br>";
