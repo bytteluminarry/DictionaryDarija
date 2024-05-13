@@ -85,7 +85,7 @@ body {
 
 .mobile {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     left: 0;
     top: 50%;
@@ -456,10 +456,11 @@ ul {
 
 .fieldset input {
     width: 100%;
-    height: 50px;
+    height: 44px;
     padding-left: 20px;
     padding-right: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
     border-radius: 20px;
     font-size: 1rem;
 }
@@ -469,7 +470,8 @@ ul {
     height: 80px;
     resize: none;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
     border-radius: 20px;
     font-size: 1rem;
 }
@@ -479,6 +481,44 @@ ul {
     height: 50px;
     background-color: #1a2a35;
     color: white;
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 1rem;
+}
+
+#sendbtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo{
+    width: 80px;
+}
+
+.descriptive{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.descriptive div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.descriptive div p{
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+.descriptive div p.title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
 }

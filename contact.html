@@ -14,7 +14,7 @@
     <div id="main-screen" class="mobile">
         <div class="topbar">
             <div class="header">
-                <img onclick="ClosePage()" src="assets/icons/backwhite.png" alt="Back">
+                <img style="width: 30px;" onclick="ClosePage()" src="assets/icons/back.png" alt="Back">
                 <h1>Darija Dictionary</h1>
                 <img style="visibility: hidden;" src="assets/icons/info.png" alt="About">
             </div>
@@ -22,6 +22,16 @@
 
         <div class="maincontent">
             <div class="page active">
+
+                <div class="descriptive">
+                    <img class="logo" src="assets/icons/contactus.png" alt="About">
+                    <div>
+                        <p class="title">Contact Us</p>
+                        <p>Would you like to ask for someting, or request something? Send us a message using the form
+                            below.</p>
+                    </div>
+                </div>
+
                 <div class="fieldset">
                     <p>Email</p>
                     <input id="txtemail" type="text">
@@ -32,7 +42,7 @@
                     <textarea id="txtmessage"></textarea>
                 </div>
 
-                <div class="fieldset">
+                <div class="fieldset" id="sendbtn">
                     <button
                         onclick="SendEmailMessage(document.getElementById('txtemail').value,document.getElementById('txtmessage').value)">Send
                         Message</button>
